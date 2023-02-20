@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="styles.css"
+</head>
+<body>
+  <div class="page-container">
+    <div class="page-left">
+      <div class="page-left-logo-container">
+        <img class="main-logo" src="img/odin-lined.png"><span>diztodev</span>
+      </div>
+      <div class="caption">Photo by <a href="https://unsplash.com/@lorenzoherrera?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Lorenzo Herrera</a> on <a href="https://unsplash.com/photos/p0j-mE6mGo4?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+      </div>
+    </div>
+    <div class="page-right form-col">
+      <h1>Sign up</h1>
+      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatem officia nulla, voluptatum necessitatibus neque deserunt quas hic consequuntur molestiae dolor autem obcaecati accusantium asperiores ab? Rem accusamus a beatae aut?</p>
+    <div class="form-container">
+      <form action="">
+        
+          <div class="form-row">
+            <h3 class="form-title">Tell us a little about yourself!</h3>
+          </div>
+          <div class="form-row">
+            <div class="form-col">
+              <label for="lname">Last Name</label>
+              <input id="lname" name ="user-last-name" type="text" required>
+            </div>
+            <div class="form-col">
+              <label for="lname">Last Name</label>
+              <input id="lname" name ="user-last-name" type="text" required>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-col">
+              <label>Email</label>
+              <input type="email" required>
+            </div>
+            <div class="form-col">
+              <label>Phone Number</label>
+              <input type="tel">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-col">
+              <label>Password</label>
+              <input type="password" required>
+            </div>
+            <div class="form-col">
+              <label>Confirm Password</label>
+              <input type="password" required>
+            </div>
+          </div>
+        </div>
+<!--         <h1>Heading 1</h1>
+        <h2>Heading 2</h2>
+        <h3>Heading 3</h3>
+        <h4>Heading 4</h4>
+        <h5>Heading 5</h5>
+        <h6>Heading 6</h6> -->
+
+
+        <button class="primary-btn" type="submit">Create Account</button>
+        <h6>Already have an account? <a>Log in</a></h4>
+
+
+          
+
+
+
+      </form>
+    </div>
+  </div>
+
+  <div class="comment-section">
+    <h1 class="comment-reply-title">Write your comment!</h1>
+    <form id="commentform" class="comment-form">
+      <div class="comment-form-name">
+        <input id="name" placeholder="Name *" name="name" type="text" value="" pattern="^[^0-9]+$" size="30" maxlength="245" required>
+        <label for="name" data-help="¿Are you 11 from Stranger Things?">Name</label>
+      </div>
+      <div class="comment-form-surname">
+        <input id="surname" placeholder="Surname *" name="surname" type="text" value="" size="30" maxlength="245" required>
+        <label for="surname" data-help="A girl has no name- Arya Stark">Surname</label>
+      </div>
+      <div class="comment-form-email">
+        <input id="email" placeholder="Email *" name="email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" required>
+        <label for="email" data-help="Format email@email.com">Email</label>
+      </div>
+      <div class="comment-form-url">
+        <input id="url" placeholder="Website" name="url" type="url" value="" size="30" maxlength="200">
+        <label for="url" data-help="Should start with http:// o https://">Website</label>
+      </div>
+      <div class="comment-form-comment">
+        <textarea textarea="" placeholder="Comment *" id="comment" name="comment" cols="45" rows="8" maxlength="65525" required></textarea>
+        <label for="comment" data-help="Escribe algo! Lo primero que se te ocurra">Comment</label>
+      </div>
+      <div class="form-submit">
+        <input name="submit" type="submit" id="submit" class="submit" value="Post Comment">
+      </div>
+    </form>
+  </div>
+</body>
+</html>
