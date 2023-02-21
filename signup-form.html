@@ -5,9 +5,23 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <link rel="stylesheet" href="styles.css"
+  <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
+<script>
+  var check = function() {
+    if (document.getElementById('password').value ==
+      document.getElementById('confirm-password').value) {
+      document.getElementById('password-confirm-msg').style.color = '#46fe87';
+      document.getElementById('password-confirm-msg').innerHTML = '✔ Passwords Match';
+    } else {
+      document.getElementById('password-confirm-msg').style.color = '#ff4e51';
+      document.getElementById('password-confirm-msg').innerHTML = '✘ Passwords Must Match!';
+    }
+  }
+</script>
+
   <div class="page-container">
     <div class="page-left">
       <div class="page-left-logo-container">
@@ -16,19 +30,65 @@
       <div class="caption">Photo by <a href="https://unsplash.com/@lorenzoherrera?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Lorenzo Herrera</a> on <a href="https://unsplash.com/photos/p0j-mE6mGo4?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
       </div>
     </div>
-    <div class="page-right form-col">
+    <div class="page-right">
+      <div class="form-info">
       <h1>Sign up</h1>
-      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatem officia nulla, voluptatum necessitatibus neque deserunt quas hic consequuntur molestiae dolor autem obcaecati accusantium asperiores ab? Rem accusamus a beatae aut?</p>
+      <p>Join our community for free by creating your account with the form below!</p>
+    </div>
     <div class="form-container">
-      <form action="">
+      <h2 class="form-title">Tell us a little about yourself!</h2>
+          <form id="signupform" class="signup-form">
+            <div class="signupform-fname">
+              <input id="name" placeholder="First Name" name="user-fname" type="text" value="" pattern="^[^0-9]+$" size="30" maxlength="245" required>
+              <label for="name" data-help="What do you go by?">First Name</label>
+            </div>
+            <div class="signupform-lname">
+              <input id="lname" placeholder="Last Name" name="user-lname" type="text" value="" size="30" maxlength="245" required>
+              <label for="lname" data-help="... and your last name?">Last Name</label>
+            </div>
+            <div class="signupform-email">
+              <input id="email" placeholder="Email" name="email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" required>
+              <label for="email" data-help="Format email@email.com">Email</label>
+            </div>
+            <div class="signupform-phone">
+              <input id="phone" placeholder="Phone Number (Optional)" name="phone" type="tel" value="" >
+              <label for="phone" data-help="Format of: 123-456-7890">Phone Number (Optional)</label>
+            </div>
+            <div class="signupform-password">
+              <input id="password" placeholder="Password" name="password" type="password" value="" size="30" maxlength="245" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" onkeyup="check();" required>
+              <label for="password" data-help="See requirements below">Password</label>
+            </div>
+            <div class="signupform-confirm-password">
+              <input id="confirm-password" placeholder="Confirm Password" name="confirm-password" type="password" value="" size="30" maxlength="245" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" onkeyup="check();" required>
+              <label for="password">Confirm Password</label>
+            </div>
+            <div class="password-requirements">
+              <span id="password-confirm-msg"></span>
+              <h5>Passwords must contain at least one:</h5>
+                <ul>
+                  <li>Uppercase letter</li>
+                  <li>Lowercase letter</li>
+                  <li>Special character or number</li>
+                </ul>
+            </div>
+            
+            <div class="form-submit" id="form-submit">
+              <a><input name="submit" type="submit" id="submit" class="submit primary-btn" value="Create Account"></a>
+            </div>
+            <h6>Already have an account? <a href="#">Log in</a></h4>
+        </form>
+        </div>
+    </div>
+  </div>
+
         
-          <div class="form-row">
+          <!-- <div class="form-row">
             <h3 class="form-title">Tell us a little about yourself!</h3>
           </div>
           <div class="form-row">
             <div class="form-col">
-              <label for="lname">Last Name</label>
-              <input id="lname" name ="user-last-name" type="text" required>
+              <label for="fname">First Name</label>
+              <input id="fname" name ="user-first-name" type="text" required>
             </div>
             <div class="form-col">
               <label for="lname">Last Name</label>
@@ -54,14 +114,8 @@
               <label>Confirm Password</label>
               <input type="password" required>
             </div>
-          </div>
-        </div>
+          </div> -->
 
-        <button class="primary-btn" type="submit">Create Account</button>
-        <h6>Already have an account? <a>Log in</a></h4>
-
-      </form>
-    </div>
-  </div>
 </body>
+
 </html>

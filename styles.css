@@ -77,7 +77,7 @@ table {
 }
 
 
-/* Form CSS */
+/* Form Element CSS */
 a {
   font-family: oswaldregular;
   color: rgb(121, 151, 220);
@@ -115,13 +115,13 @@ p {
   font-size: 1rem;
 }
 
-
-
 body {
   height: 100vh;
   width: 100vw;
   background: rgb(23, 16, 33);
 }
+
+/* Page Layout */
 .page-container {
   height: 100%;
   width: 100%;
@@ -144,6 +144,7 @@ body {
   height: 8rem;
   width: auto;
   padding: 20px;
+
 }
 
 .page-left-logo-container span{
@@ -166,7 +167,7 @@ body {
 .page-left-logo-container {
   background-color: rgba(15,15,15,.7);
   display: flex;
-  flex:0 1 30%;
+
   flex-wrap: wrap;
   flex-direction: row;
   justify-content: center;
@@ -190,43 +191,6 @@ body {
 }
 
 
-.form-col {
-  display:flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
-  gap: 10px;
-}
-.form-row {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  gap: 30px;
-  padding: 5px 0;
-}
-
-.form-col > label {
-  font-family: oswaldregular;
-  text-transform: uppercase;
-  font-size: .75rem;
-}
-
-.primary-btn {
-  text-transform: uppercase;
-  height: 50px;
-  border-radius: 20px;
-  margin:20px 0;
-  padding: 15px;
-  background-color: white;
-  color:black;
-  border: none;
-}
-
-.primary-btn:hover {
-  background-color: transparent;
-  color: white;
-  border: white 2px solid;
-}
 
 .form-container {
 background: rgb(136,0,255);
@@ -241,28 +205,304 @@ width: 100%;
   padding-bottom: 20px;
 }
 
+
+
+/*Animations*/
+@-webkit-keyframes silo-fade {
+  0% {
+      opacity: 0;
+      -webkit-transform: translateY(-1.4em);
+  }
+  100% {
+      opacity: 1;
+      -webkit-transform: translateY(0);
+  }
+}
+@-moz-keyframes silo-fade {
+  0% {
+      opacity: 0;
+      -moz-transform: translateY(-1.4em);
+  }
+  100% {
+      opacity: 1;
+      -moz-transform: translateY(0);
+  }
+}
+@keyframes silo-fade {
+  0% {
+      opacity: 0;
+      -webkit-transform: translateY(-1.4em);
+      -moz-transform: translateY(-1.4em);
+      -ms-transform: translateY(-1.4em);
+      -o-transform: translateY(-1.4em);
+      transform: translateY(-1.4em);
+  }
+  100% {
+      opacity: 1;
+      -webkit-transform: translateY(0);
+      -moz-transform: translateY(0);
+      -ms-transform: translateY(0);
+      -o-transform: translateY(0);
+      transform: translateY(0);
+  }
+}
+
+@-webkit-keyframes silo-help {
+  0% {
+      opacity: 0;
+  }
+  4% {
+      opacity: 0;
+  }
+  5% {
+      opacity: 1;
+  }
+  100% {
+      opacity: 1;
+  }
+}
+@-moz-keyframes silo-help {
+  0% {
+      opacity: 0;
+  }
+  4% {
+      opacity: 0;
+  }
+  5% {
+      opacity: 1;
+  }
+  100% {
+      opacity: 1;
+  }
+}
+@keyframes silo-help {
+  0% {
+      opacity: 0;
+  }
+  4% {
+      opacity: 0;
+  }
+  5% {
+      opacity: 1;
+  }
+  100% {
+      opacity: 1;
+  }
+}
+
+
+
+
+#signupform label {
+  padding: 5px 0;
+  font-size: 14px;
+  font-size: 0.75rem;
+  display: none;
+  position: absolute;
+  margin-top: -50px;
+  padding-left: 10px;
+  color: white;
+  -webkit-animation: silo-fade 0.2s;
+  -moz-animation: silo-fade 0.2s;
+  animation: silo-fade 0.2s;
+  max-width: 80%;
+}
+
+/* General Input Style */
+
 input {
-  height: 30px;
-  background: transparent;
+  font-size: 100%;
+  margin: 0;
+  max-width: 100%;
+  vertical-align: baseline;
+  height: 40px;
+  background: rgba(171, 74, 195, 0.25);
   border-radius: 10px;
   border: #ccc solid 1px;
   width: 200px;
+  color: white;
 }
 
 
-input:active {
-  border: green 1px solid;
+
+#signupform  input:focus + label,
+#signupform  input[required]:valid + label,
+#signupform  input:not(:placeholder-shown) + label {
+    display: block;
 }
 
-input:required {
-  border: red 2px solid;
+#signupform input:invalid{
+    border: 1px solid #ff4e51;
+    background: rgba(171, 74, 195, 0.25);
+}
+#signupform input:focus:invalid{
+    border: 1px solid #ff4e51;
+    background: rgba(171, 74, 195, 0.25);
+}
+#signupform input:invalid + label {
+    color: #fff;
+}
+#signupform input:focus:invalid + label:after {
+    content: " (" attr(data-help) ")";
+    animation: silo-help 60s;
+}
+#signupform input:invalid + label:after {
+    content: " (" attr(data-help) ")";
+}
+#signupform input:valid {
+    border: 1px solid #46fe87;
+    background: rgba(171, 74, 195, 0.25);
 }
 
-input:optional {
-  border:rgb(139, 35, 230) 2px solid;
-
+#signupform input:valid + label {
+    color: #ffffff;
+}
+#signupform input:placeholder-shown {
+    border: 1px solid #d8d8d8;
+    background: rgba(171, 74, 195, 0.25);
+}
+#signupform input::placeholder {
+    color: #c0c0c0;
+}
+#signupform input::-webkit-input-placeholder {
+    color: #c0c0c0;
+}
+#signupform input:-ms-input-placeholder {
+    color: #c0c0c0;
+}
+#signupform input::-moz-placeholder{
+    color: #c0c0c0;
+}
+#signupform input:focus::placeholder,
+#signupform textarea:focus::placeholder {
+    color: transparent;
+}
+#signupform input:focus::-webkit-input-placeholder,
+#signupform textarea:focus::-webkit-input-placeholder {
+    color: transparent;
+}
+#signupform input:focus:-ms-input-placeholder,
+#signupform textarea:focus:-ms-input-placeholder {
+    color: transparent;
+}
+#signupform input:focus::-moz-placeholder,
+#signupform textarea:focus::-moz-placeholder {
+    color: transparent;
 }
 
-input:valid {
-  border:white 2px solid;
+
+#signupform input[type="submit"] {
+  text-transform: uppercase;
+  height: 50px;
+  border-radius: 20px;
+  margin:20px 0;
+  padding: 15px;
+  background-color: rgb(255, 255, 255);
+  color:black;
+  border: white 1px solid;
+}
+#signupform input[type="submit"]:hover {
+  text-transform: uppercase;
+  height: 50px;
+  border-radius: 20px;
+  margin:20px 0;
+  padding: 15px;
+  background-color: rgb(190, 175, 201);
+  color:black;
+  border: white 1px solid;
+}
+
+@media (min-width: 600px) {
+  #signupform > .signupform-fname,
+  #signupform > .signupform-lname,
+  #signupform > .signupform-email,
+  #signupform > .signupform-phone,
+  #signupform > .signupform-password,
+  #signupform > .signupform-confirm-password {
+      -webkit-box-flex: 0;
+      -webkit-flex: 0 0 50%;
+              -ms-flex: 0 0 50%;
+                      flex: 0 0 50%;
+      max-width: 40%;
+      padding: 10px 0;
+  }
+}
+
+
+/* Form Stuff */
+
+
+input[type="text"], input[type="email"], input[type="tel"], input[type="password"] {
+  background-color: rgba(255, 255, 255, .7);
+  padding: 10px 10px 0px 10px;
+  font-size: 16px;
+  font-size: 1rem;
+  width: 100%;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+:focus {
+  outline: 0;
+}
+input[type="text"]:focus, input[type="email"]:focus, input[type="tel"]:focus, input[type="password"]:focus  {
+  background-color: rgba(255, 255, 255, 1);
+  
+}
+
+#signupform {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 5%;
+  -webkit-flex-wrap: wrap;
+          -ms-flex-wrap: wrap;
+                  flex-wrap: wrap;
+}
+
+#signupform > div {
+  flex: 1 1 40%;
+  max-width: 40%;
+}
+
+#signupform > [class^="signup-form"],
+#signupform > .form-submit {
+    position: relative;
+    min-height: 1px;
+    padding-top: 20px;
+    width: 100%;
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 100%;
+            -ms-flex: 0 0 100%;
+                    flex: 0 0 100%;
+    max-width: 100%;
+}
+
+.password-requirements {
+  padding-left: 20px;
+}
+
+.password-requirements > h5 {
+  padding-top: 10px;
+}
+
+.password-requirements ul{
+  list-style:circle;
+  margin-left: 20px;
+  padding-top: 10px;
+}
+
+.form-container > h2 {
+  margin:20px 0;
+}
+
+.form-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 100%;
+
 }
