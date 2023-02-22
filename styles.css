@@ -318,9 +318,9 @@ input {
 
 
 
-#signupform  input:focus + label,
-#signupform  input[required]:valid + label,
-#signupform  input:not(:placeholder-shown) + label {
+#signupform input:focus + label,
+#signupform input[required]:valid + label,
+#signupform input:not(:placeholder-shown) + label {
     display: block;
 }
 
@@ -406,12 +406,12 @@ input {
 }
 
 @media (min-width: 600px) {
-  #signupform > .signupform-fname,
-  #signupform > .signupform-lname,
-  #signupform > .signupform-email,
-  #signupform > .signupform-phone,
-  #signupform > .signupform-password,
-  #signupform > .signupform-confirm-password {
+  #form-container > .signupform-fname,
+  #form-container > .signupform-lname,
+  #form-container > .signupform-email,
+  #form-container > .signupform-phone,
+  #form-container > .signupform-password,
+  #form-container > .signupform-confirm-password {
       -webkit-box-flex: 0;
       -webkit-flex: 0 0 50%;
               -ms-flex: 0 0 50%;
@@ -444,14 +444,18 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="tel"]:focus, in
   
 }
 
-
-.signup-form {
+.form-container {
   background: rgb(136,0,255);
   background: linear-gradient(90deg, rgba(136,0,255,0.4) 0%, rgba(0,185,255,0.4) 100%);
   box-shadow: 35px 0px 40px 10px rgb(139, 35, 230);
   padding: 30px 50px;
   margin: 20px -50px;
   width: 100%;
+}
+
+
+
+.signup-form {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -466,6 +470,7 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="tel"]:focus, in
 .signup-form > div {
   flex: 1 1 40%;
   max-width: 40%;
+  padding: 5px 0;
 }
 
 #signupform > [class^="signup-form"],
@@ -495,9 +500,6 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="tel"]:focus, in
   padding-top: 10px;
 }
 
-.form-container > h2 {
-  margin:20px 0;
-}
 
 .form-info {
   display: flex;

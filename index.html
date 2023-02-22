@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Sign-up Form</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 
@@ -35,50 +35,52 @@
       <h1>Sign up</h1>
       <p>Join our community for free by creating your account with the form below!</p>
     </div>
-    <div class="form-container">
-      <h2 class="form-title">Tell us a little about yourself!</h2>
-          <form id="signupform" >
+    <div>
+      <form id="signupform" >
+          <div class="form-container">
+            <div><h2 class="form-title">Tell us a little about yourself!</h2></div>
             <div class="signup-form">
-            <div class="signupform-fname">
-              <input id="name" placeholder="First Name" name="user-fname" type="text" value="" pattern="^[^0-9]+$" size="30" maxlength="245" required>
-              <label for="name" data-help="What do you go by?">First Name</label>
+              <div class="signupform-fname">
+                <input id="name" placeholder="First Name" name="user-fname" type="text" value="" pattern="^[^0-9]+$" size="30" maxlength="245" required>
+                <label for="name" data-help="What do you go by?">First Name</label>
+              </div>
+              <div class="signupform-lname">
+                <input id="lname" placeholder="Last Name" name="user-lname" type="text" value="" size="30" maxlength="245" required>
+                <label for="lname" data-help="... and your last name?">Last Name</label>
+              </div>
+              <div class="signupform-email">
+                <input id="email" placeholder="Email" name="email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" required>
+                <label for="email" data-help="Format email@email.com">Email</label>
+              </div>
+              <div class="signupform-phone">
+                <input id="phone" placeholder="Phone Number (Optional)" name="phone" type="tel" value="" >
+                <label for="phone" data-help="Format of: 123-456-7890">Phone Number (Optional)</label>
+              </div>
+              <div class="signupform-password">
+                <input id="password" placeholder="Password" name="password" type="password" value="" size="30" maxlength="245" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" onkeyup="check();" required>
+                <label for="password" data-help="See requirements below">Password</label>
+              </div>
+              <div class="signupform-confirm-password">
+                <input id="confirm-password" placeholder="Confirm Password" name="confirm-password" type="password" value="" size="30" maxlength="245" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" onkeyup="check();" required>
+                <label for="password">Confirm Password</label>
+              </div>
+              <div class="password-requirements">
+                <span id="password-confirm-msg"></span>
+                <h5>Passwords must contain at least one:</h5>
+                  <ul>
+                    <li>Uppercase letter</li>
+                    <li>Lowercase letter</li>
+                    <li>Special character or number</li>
+                  </ul>
+              </div>
             </div>
-            <div class="signupform-lname">
-              <input id="lname" placeholder="Last Name" name="user-lname" type="text" value="" size="30" maxlength="245" required>
-              <label for="lname" data-help="... and your last name?">Last Name</label>
-            </div>
-            <div class="signupform-email">
-              <input id="email" placeholder="Email" name="email" type="email" value="" size="30" maxlength="100" aria-describedby="email-notes" required>
-              <label for="email" data-help="Format email@email.com">Email</label>
-            </div>
-            <div class="signupform-phone">
-              <input id="phone" placeholder="Phone Number (Optional)" name="phone" type="tel" value="" >
-              <label for="phone" data-help="Format of: 123-456-7890">Phone Number (Optional)</label>
-            </div>
-            <div class="signupform-password">
-              <input id="password" placeholder="Password" name="password" type="password" value="" size="30" maxlength="245" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" onkeyup="check();" required>
-              <label for="password" data-help="See requirements below">Password</label>
-            </div>
-            <div class="signupform-confirm-password">
-              <input id="confirm-password" placeholder="Confirm Password" name="confirm-password" type="password" value="" size="30" maxlength="245" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" onkeyup="check();" required>
-              <label for="password">Confirm Password</label>
-            </div>
-            <div class="password-requirements">
-              <span id="password-confirm-msg"></span>
-              <h5>Passwords must contain at least one:</h5>
-                <ul>
-                  <li>Uppercase letter</li>
-                  <li>Lowercase letter</li>
-                  <li>Special character or number</li>
-                </ul>
-            </div>
-            </div>
-            <div class="form-submit" id="form-submit">
-              <a><input name="submit" type="submit" id="submit" class="submit primary-btn" value="Create Account"></a>
-            </div>
-            <h6>Already have an account? <a href="#">Log in</a></h4>
-        </form>
         </div>
+          <div class="form-submit" id="form-submit">
+            <a><input name="submit" type="submit" id="submit" class="submit primary-btn" value="Create Account"></a>
+          </div>
+          <h6>Already have an account? <a href="#">Log in</a></h4>
+      </form>
+      </div>
     </div>
   </div>
 
