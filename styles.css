@@ -192,14 +192,7 @@ body {
 
 
 
-.form-container {
-background: rgb(136,0,255);
-background: linear-gradient(90deg, rgba(136,0,255,0.4) 0%, rgba(0,185,255,0.4) 100%);
-box-shadow: 35px 0px 40px 10px rgb(139, 35, 230);
-padding: 30px 50px;
-margin: 20px -50px;
-width: 100%;
-}
+
 
 .form-title {
   padding-bottom: 20px;
@@ -451,7 +444,14 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="tel"]:focus, in
   
 }
 
-#signupform {
+
+.signup-form {
+  background: rgb(136,0,255);
+  background: linear-gradient(90deg, rgba(136,0,255,0.4) 0%, rgba(0,185,255,0.4) 100%);
+  box-shadow: 35px 0px 40px 10px rgb(139, 35, 230);
+  padding: 30px 50px;
+  margin: 20px -50px;
+  width: 100%;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -460,9 +460,10 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="tel"]:focus, in
   -webkit-flex-wrap: wrap;
           -ms-flex-wrap: wrap;
                   flex-wrap: wrap;
-}
+  }
 
-#signupform > div {
+
+.signup-form > div {
   flex: 1 1 40%;
   max-width: 40%;
 }

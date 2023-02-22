@@ -37,7 +37,8 @@
     </div>
     <div class="form-container">
       <h2 class="form-title">Tell us a little about yourself!</h2>
-          <form id="signupform" class="signup-form">
+          <form id="signupform" >
+            <div class="signup-form">
             <div class="signupform-fname">
               <input id="name" placeholder="First Name" name="user-fname" type="text" value="" pattern="^[^0-9]+$" size="30" maxlength="245" required>
               <label for="name" data-help="What do you go by?">First Name</label>
@@ -71,7 +72,7 @@
                   <li>Special character or number</li>
                 </ul>
             </div>
-            
+            </div>
             <div class="form-submit" id="form-submit">
               <a><input name="submit" type="submit" id="submit" class="submit primary-btn" value="Create Account"></a>
             </div>
